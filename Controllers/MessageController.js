@@ -12,5 +12,17 @@ const AddMessage = async (req,resp)=>{
 };
 
 
+const GetMessages = async(req,resp)=>{
+  try {
+    const messages = await Message.find({
+      conversationId:req.params.conversationId,
+    });
+    resp.status(200).json(messages);
+  } catch (error) {
+    resp.status(500).json(error);
+  }
+}
 
-module.exports = {AddMessage};
+
+
+module.exports = {AddMessage,GetMessages};
