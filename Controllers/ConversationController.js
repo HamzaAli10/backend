@@ -14,14 +14,15 @@ const conversation = async (req,resp)=>{
 };
 
 // get single user conversation
-const SingleConversation = async (req,resp)=>{
+const SingleConversation = async (req,res)=>{
+  console.log(req.params.userId);
   try {
     const conversation = await Conversation.find({
       members:{$in:[req.params.userId]}
     });
-    resp.status(200).json(conversation);
+    res.status(200).json(conversation);
   } catch (error) {
-    resp.status(500).json(error);
+    res.status(500).json(error);
   }
 }
 

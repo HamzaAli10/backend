@@ -61,4 +61,14 @@ const registerUser = async (req,resp) =>{
        
     }
 
+    // const singleUser = async (req,resp)=>{
+    //     const userId = req.query.userId;
+    //     const username = req.query.username;
+    //     try {
+    //         const user = userId ? await
+    //     } catch (error) {
+            
+    //     }
+    // }
+
 module.exports = {registerUser,loginUser,allUsers};
