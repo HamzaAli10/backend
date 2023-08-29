@@ -5,13 +5,14 @@ const UserRoute = require('./Routes/UserRoute');
 // const MessageRoute = require('./Routes/MessageRoute');
 const ConversationRoute = require('./Routes/ConversationRoute');
 const MessageRoute = require('./Routes/MessageRoute');
+const cors = require('cors');
 const app = express();
 dotenv.config();
 
 const mongoose = require('mongoose');
 
 app.use(express.json()); // to accept json data
-
+app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 mongoose
